@@ -1,0 +1,24 @@
+ <h3>Registering  Items</h3>
+  <%= link_to 'Register Item', new_customer_path %><br>
+  <% if admin_signed_in? %>
+   <%= button_to "sign out as admin", destroy_admin_session_path, method: :delete %></li> 
+   <h1>Welcome to items list</h1><br>
+       <% @customers.each do |customer| %>
+         <li>
+            <%= link_to customer.name,customer %>
+             </a>
+          </li>
+   <% end %>
+   
+   <%else%>
+  <li><%=link_to "Sign In", new_admin_session_path%></li>
+  <%end%>
+  
+   
+   
+
+
+
+
+
+  
